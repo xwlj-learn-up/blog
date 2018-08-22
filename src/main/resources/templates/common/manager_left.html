@@ -1,0 +1,58 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang='zh-CN' xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>manger_left.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <aside class="col-sm-3 col-md-2 col-lg-2 sidebar"  th:fragment="manager_left">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="/manager">报告</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href="/manager/article">文章</a></li>
+        <li><a href="/manager/notice">公告</a></li>
+        <li><a href="/manager/comment">评论</a></li>
+        <li><a data-toggle="tooltip" data-placement="bottom" title="网站暂无留言功能">留言</a></li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a href="/manager/category">栏目</a></li>
+        <li><a class="dropdown-toggle" id="otherMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">其他</a>
+          <ul class="dropdown-menu" aria-labelledby="otherMenu">
+            <li><a href="/manager/flink">友情链接</a></li>
+            <li><a data-toggle="modal" data-target="#areDeveloping">访问记录</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav nav-sidebar">
+        <li><a class="dropdown-toggle" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">用户</a>
+          <ul class="dropdown-menu" aria-labelledby="userMenu">
+            <li><a data-toggle="modal" data-target="#areDeveloping">管理用户组</a></li>
+            <li><a href="/manager/manage-user">管理用户</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/manager/loginlog">管理登录日志</a></li>
+          </ul>
+        </li>
+        <li><a class="dropdown-toggle" id="settingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">设置</a>
+          <ul class="dropdown-menu" aria-labelledby="settingMenu">
+            <li><a href="/manager/setting">基本设置</a></li>
+            <li><a href="/manager/readset">阅读设置</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a data-toggle="modal" data-target="#areDeveloping">安全配置</a></li>
+            <li role="separator" class="divider"></li>
+            <li class="disabled"><a>扩展菜单</a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+  </body>
+</html>

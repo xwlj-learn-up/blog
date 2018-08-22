@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.xwlj888.blog.mybatis.GoodMapper">
+  <resultMap id="BaseResultMap" type="cn.xwlj888.blog.pojo.Good">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="chiContent" jdbcType="VARCHAR" property="chicontent" />
+    <result column="engContent" jdbcType="VARCHAR" property="engcontent" />
+    <result column="date" jdbcType="DATE" property="date" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+  </resultMap>
+</mapper>
