@@ -1,5 +1,7 @@
 package cn.xwlj888.blog.service;
 
+import cn.xwlj888.blog.pojo.User;
+
 public interface UserService {
-	boolean loginUser(String username, String password);
+	User selectUser(String username, String userPwd);
 }

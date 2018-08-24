@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
     @RequestMapping("/")
-    public String getIndex(Model model){
-        //List<Article> articles = articleService.getArticles();
-        //model.addAttribute("articles", articles);
+    public String getIndex(){
         return "homepage/index";
     }
 }

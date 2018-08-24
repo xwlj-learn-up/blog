@@ -13,7 +13,7 @@ import java.util.List;
  * @author
  * @create 2018-08-22 17:23
  **/
-/*
+
 @Component
 @Slf4j
 public class ErrorPageInterceptor extends HandlerInterceptorAdapter {
@@ -22,10 +22,10 @@ public class ErrorPageInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws
             Exception {
         if (errorCodeList.contains(response.getStatus())) {
-log.error(response.getStatus()+"");
-            response.sendRedirect("/error/" + response.getStatus());
+            log.error(response.getStatus()+"--response.getStatus()");
+            response.sendRedirect("/error/404");
             return false;
         }
         return super.preHandle(request, response, handler);
     }
-}*/
+}

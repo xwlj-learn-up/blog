@@ -1,6 +1,5 @@
-package cn.xwlj888.blog.common;
+package cn.xwlj888.blog.util;
 
-import lombok.Data;
 import com.alibaba.fastjson.JSON;
 import java.io.Serializable;
 import java.util.HashMap;
@@ -11,7 +10,7 @@ import java.util.Map;
  * @create 2018-08-22 16:40
  **/
 
-public class JsonResult implements Serializable {
+public class JsonResultUtil implements Serializable {
     /**
      * 返回码 非0即失败
      * */
@@ -26,9 +25,9 @@ public class JsonResult implements Serializable {
      * */
     private Map<String, Object> data;
 
-    public JsonResult(){};
+    public JsonResultUtil(){};
 
-    public JsonResult(int code, String msg, Map<String, Object> data) {
+    public JsonResultUtil(int code, String msg, Map<String, Object> data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
@@ -38,7 +37,7 @@ public class JsonResult implements Serializable {
         return success(new HashMap<>(0));
     }
     public static String success(Map<String, Object> data) {
-        return JSON.toJSONString(new JsonResult(0, "解析成功", data));
+        return JSON.toJSONString(new JsonResultUtil(0, "解析成功", data));
     }
 
     public static String failed() {
@@ -48,7 +47,7 @@ public class JsonResult implements Serializable {
         return failed(-1, msg);
     }
     public static String failed(int code, String msg) {
-        return JSON.toJSONString(new JsonResult(code, msg, new HashMap<>(0)));
+        return JSON.toJSONString(new JsonResultUtil(code, msg, new HashMap<>(0)));
     }
 
 }

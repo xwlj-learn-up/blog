@@ -7,6 +7,13 @@
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="role" jdbcType="VARCHAR" property="role" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="editCount" jdbcType="INTEGER" property="editcount" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
     <result column="password" jdbcType="LONGVARCHAR" property="password" />
   </resultMap>
 </mapper>

@@ -1,6 +1,5 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html lang='zh-CN' xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang='zh-CN' xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
@@ -27,7 +26,7 @@
 <body class="user-select">
 <div class="container">
   <div class="siteIcon"><img src="/images/icon/icon.png" alt="" data-toggle="tooltip" data-placement="top" title="欢迎使用喜闻乐见管理系统" draggable="false" /></div>
-  <form action="/login/loginUser" method="post" autocomplete="off" class="form-signin">
+  <form action="/manager/login" method="post" autocomplete="off" class="form-signin">
     <h2 class="form-signin-heading">管理员登录</h2>
     <label for="userName" class="sr-only">用户名</label>
     <input type="text" id="userName" name="username" class="form-control" placeholder="请输入用户名" required autofocus autocomplete="off" maxlength="10">

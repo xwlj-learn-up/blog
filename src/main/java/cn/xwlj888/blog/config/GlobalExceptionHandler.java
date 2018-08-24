@@ -1,6 +1,6 @@
 package cn.xwlj888.blog.config;
 
-import cn.xwlj888.blog.common.JsonResult;
+import cn.xwlj888.blog.util.JsonResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.ConversionNotSupportedException;
 import org.springframework.beans.TypeMismatchException;
@@ -22,7 +22,7 @@ import java.io.IOException;
 @ControllerAdvice
 @ResponseBody
 @Slf4j
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler extends Throwable {
    private static final String logExceptionFormat = "Capture Exception By GlobalExceptionHandler: Code: %s Detail: %s";
     //private static Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
@@ -118,7 +118,7 @@ public class GlobalExceptionHandler {
     private <T extends Throwable> String resultFormat(Integer code, T ex) {
         ex.printStackTrace();
         log.error(String.format(logExceptionFormat, code, ex.getMessage()));
-        return JsonResult.failed(code, ex.getMessage());
+        return JsonResultUtil.failed(code, ex.getMessage());
     }
 
 }

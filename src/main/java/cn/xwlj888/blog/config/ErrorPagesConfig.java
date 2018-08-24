@@ -31,7 +31,7 @@ public class ErrorPagesConfig {
     private static class MyErrorPageRegistrar implements ErrorPageRegistrar {
         @Override
         public void registerErrorPages(ErrorPageRegistry registry) {
-            System.out.println(HttpStatus.NOT_FOUND+"");
+            System.out.println("HttpStatus.NOT_FOUND:"+HttpStatus.NOT_FOUND+"");
             ErrorPage errorPage400 = new ErrorPage(HttpStatus.BAD_REQUEST, "/error-400.html");
             ErrorPage errorPage404 = new ErrorPage(HttpStatus.NOT_FOUND, "/error/404.html");
             ErrorPage errorPage500 = new ErrorPage(HttpStatus.INTERNAL_SERVER_ERROR, "/error-500.html");

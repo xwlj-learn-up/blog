@@ -8,26 +8,26 @@ import cn.xwlj888.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.util.ListUtils;
+import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
 
 
+/**
+ * @author zs
+ */
 @Service
 public class UserServiceImpl implements UserService {
 	@Resource
 	private UserMapper userMapper;
 
+
 	@Override
-	public boolean loginUser(String username, String password) {
-		User user = new User();
-		user.setUsername(username);
-		user.setPassword(password);
-		//List<User> u =  userMapper.select(user);
-		/*if (!ListUtils.isEmpty(u)) {
-			return true;
-		}*/
-		
-		return false;
+	public User selectUser(String username, String password) {
+		Example example = new Example(User.class);
+		example.createCriteria()
+				.andEqualTo("username",username)
+				.andEqualTo("password",password);
+		return userMapper.selectOneByExample(example);
 	}
-	
 }

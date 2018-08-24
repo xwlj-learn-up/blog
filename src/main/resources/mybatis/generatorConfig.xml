@@ -37,11 +37,12 @@
         <sqlMapGenerator targetPackage="sqlmapper" targetProject="src/main/resources"/>
         <javaClientGenerator targetPackage="cn.xwlj888.blog.mybatis" targetProject="src/main/java"
                              type="XMLMAPPER"/>
-        <table tableName="%">
-            <!--mysql 配置-->
+        <!--<table tableName="%">
+            &lt;!&ndash;mysql 配置&ndash;&gt;
             <generatedKey column="id" sqlStatement="Mysql" />
-            <!--oracle 配置-->
-            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
-        </table>
+            &lt;!&ndash;oracle 配置&ndash;&gt;
+            &lt;!&ndash;<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>&ndash;&gt;
+        </table>-->
+        <table tableName="user"> <generatedKey column="id" sqlStatement="Mysql" /></table>
     </context>
 </generatorConfiguration>
