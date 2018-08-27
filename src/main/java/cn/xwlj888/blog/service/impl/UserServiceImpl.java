@@ -1,10 +1,13 @@
 package cn.xwlj888.blog.service.impl;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import cn.xwlj888.blog.mybatis.UserMapper;
 import cn.xwlj888.blog.pojo.User;
 import cn.xwlj888.blog.service.UserService;
+import cn.xwlj888.blog.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.util.ListUtils;
@@ -26,8 +29,14 @@ public class UserServiceImpl implements UserService {
 	public User selectUser(String username, String password) {
 		Example example = new Example(User.class);
 		example.createCriteria()
-				.andEqualTo("username",username)
+				.andEqualTo("email",username)
 				.andEqualTo("password",password);
-		return userMapper.selectOneByExample(example);
+		User user =  userMapper.selectOneByExample(example);
+		return  user;
+	}
+
+	@Override
+	public void updateUser(User user) {
+		userMapper.updateByPrimaryKey(user);
 	}
 }

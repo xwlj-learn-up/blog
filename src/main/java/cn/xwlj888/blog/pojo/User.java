@@ -1,11 +1,7 @@
 package cn.xwlj888.blog.pojo;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
+import javax.persistence.*;
 
 public class User {
     @Id
@@ -33,7 +29,15 @@ public class User {
     private Integer editcount;
 
     private String note;
-    @NotBlank(message = "密码不能为空")
+
+    @Column(name = "lastTime")
+    private Date lasttime;
+
+    @Column(name = "lastIp")
+    private String lastip;
+
+    private Integer logined;
+
     private String password;
 
     /**
@@ -164,6 +168,48 @@ public class User {
      */
     public void setNote(String note) {
         this.note = note;
+    }
+
+    /**
+     * @return lastTime
+     */
+    public Date getLasttime() {
+        return lasttime;
+    }
+
+    /**
+     * @param lasttime
+     */
+    public void setLasttime(Date lasttime) {
+        this.lasttime = lasttime;
+    }
+
+    /**
+     * @return lastIp
+     */
+    public String getLastip() {
+        return lastip;
+    }
+
+    /**
+     * @param lastip
+     */
+    public void setLastip(String lastip) {
+        this.lastip = lastip;
+    }
+
+    /**
+     * @return logined
+     */
+    public Integer getLogined() {
+        return logined;
+    }
+
+    /**
+     * @param logined
+     */
+    public void setLogined(Integer logined) {
+        this.logined = logined;
     }
 
     /**

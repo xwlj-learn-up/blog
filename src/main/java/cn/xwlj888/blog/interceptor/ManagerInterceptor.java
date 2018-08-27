@@ -18,9 +18,7 @@ public class ManagerInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("==============  request before  ==============");
         HttpSession session = request.getSession();
-
         Integer uuid = (Integer) session.getAttribute(UserEnum.UUID.getCode());
-        System.out.println("uuid:"+uuid);
         String role = (String) session.getAttribute(UserEnum.ROLE.getCode());
         if (uuid == null || StringUtils.isAllEmpty(role) || !UserEnum.ADMIN.getCode().equals(role)){
             response.sendRedirect("/");
@@ -36,7 +34,6 @@ public class ManagerInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        System.out.println("==============  request after  ==============");
 
     }
 }

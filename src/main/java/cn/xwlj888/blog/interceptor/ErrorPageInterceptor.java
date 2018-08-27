@@ -22,7 +22,6 @@ public class ErrorPageInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws
             Exception {
         if (errorCodeList.contains(response.getStatus())) {
-            log.error(response.getStatus()+"--response.getStatus()");
             response.sendRedirect("/error/404");
             return false;
         }
