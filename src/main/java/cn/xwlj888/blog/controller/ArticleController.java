@@ -19,6 +19,6 @@ public class ArticleController {
 	//@ResponseBody
 	public String add(){
 		//articleService.add(article);
-		return "redirect:/manager/article.html";
+		return "redirect:/manager/article?id=";
 	}
 }

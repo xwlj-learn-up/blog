@@ -12,7 +12,10 @@ public enum UserEnum {
     USERNAME("userName",""),
     UUID("uuid",""),
     RE("R","RE"),
-    ADMIN("A","A");
+    ADMIN("A","A"),
+    LASTLOGINTIME("lastTime",""),
+    LOGINED("logined","LOGINED"),
+    LASTLOGINIP("lastIp","");
 
 
     private String code;

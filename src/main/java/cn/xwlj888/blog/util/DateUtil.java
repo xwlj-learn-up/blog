@@ -138,4 +138,47 @@ public class DateUtil {
         SIMPLE_DATE_FORMAT.applyPattern(format);
         return SIMPLE_DATE_FORMAT.format(date);
     }
+
+    public static String getDate() {
+        return DateUtil.formatTimestamp(new Date(), DateUtil.DATETIME_HORIZONTAL_FORMAT);
+    }
+
+    /**
+     * 日期格式(中文)：yyyy年MM月dd日 HH时mm分ss秒
+     */
+    public static String getZH_Date() {
+        return DateUtil.formatTimestamp(new Date(), DateUtil.DATETIME_CN_FORMAT);
+    }
+    //时间工具类计算总时间
+    public static String friendDuration(long ms) {
+        short ss = 1000;
+        int mi = ss * 60;
+        int hh = mi * 60;
+        int dd = hh * 24;
+        long day = ms / (long) dd;
+        long hour = (ms - day * (long) dd) / (long) hh;
+        long minute = (ms - day * (long) dd - hour * (long) hh) / (long) mi;
+        long second = (ms - day * (long) dd - hour * (long) hh - minute * (long) mi) / (long) ss;
+        long milliSecond = ms - day * (long) dd - hour * (long) hh - minute * (long) mi - second * (long) ss;
+        StringBuilder str = new StringBuilder();
+        if (day > 0L) {
+            str.append(day).append("天,");
+        }
+        if (hour > 0L) {
+            str.append(hour).append("时");
+        }
+        if (minute > 0L) {
+            str.append(minute).append("分");
+        }
+        if (second > 0L) {
+            str.append(second).append("秒");
+        }
+        if (milliSecond > 0L) {
+            str.append(milliSecond).append("毫秒");
+        }
+        if (str.length() > 0) {
+            str = str.deleteCharAt(str.length() - 1);
+        }
+        return str.toString();
+    }
 }

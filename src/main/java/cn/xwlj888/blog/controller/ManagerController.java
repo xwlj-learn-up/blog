@@ -3,23 +3,27 @@ package cn.xwlj888.blog.controller;
 
 import cn.xwlj888.blog.common.UserEnum;
 import cn.xwlj888.blog.pojo.User;
+import cn.xwlj888.blog.service.ArticleService;
 import cn.xwlj888.blog.service.ManagerService;
 import cn.xwlj888.blog.service.UserService;
 import cn.xwlj888.blog.util.DateUtil;
 import cn.xwlj888.blog.util.IpAdrressUtil;
+import cn.xwlj888.blog.util.JsonResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -35,6 +39,8 @@ public class ManagerController {
     private ManagerService managerService;
     @Autowired
     UserService userService;
+    @Autowired
+    ArticleService articleService;
 
     /**
      * 后台管理首页
@@ -42,53 +48,43 @@ public class ManagerController {
      * @return
      */
     @RequestMapping
-    public String index(HttpSession session, ModelMap map) {
+    public String index(HttpSession session) {
         Integer uuid = (Integer) session.getAttribute(UserEnum.UUID.getCode());
         if (uuid != null){
-
-            map.addAttribute("","");
-
-
             return  "/manager/index";
         }
         return "/manager/login";
     }
 
     /**
-     * 后台登录
-     * @param username
-     * @param userpwd
-     * @param code
-     * @param session
+     * 获取信息总览中的四个数量
      * @return
-     * @throws Exception
      */
-    @RequestMapping(value = "login",method = RequestMethod.POST)
-    public String login(String username, String userpwd, String code, HttpSession session, HttpServletRequest request) throws Exception {
-        User user = userService.selectUser(username,userpwd);
-        if (user != null) {
-            log.info(user.getRole()+"--登录成功--"+Calendar.getInstance().getTime());
-            session.setAttribute(UserEnum.ROLE.getCode(),user.getRole());
-            session.setAttribute(UserEnum.USERNAME.getCode(),user.getUsername());
-            session.setAttribute(UserEnum.UUID.getCode(),user.getId());
-            String ip = IpAdrressUtil.getIpAdrress(request);
+    @PostMapping("getCount")
+    @ResponseBody
+    public String getCount(HttpSession session){
+        Integer articlCount = 2;
+        Integer commontCount = 3;
+        Integer flinkCount = 4;
+        Integer viewCount = 5;
 
-            Integer logined = user.getLogined();
-            if (logined == null){
-                user.setLogined(0);
-            }
-            user.setLogined(logined+1);
-            user.setLasttime(Timestamp.valueOf(DateUtil.formatTimestamp(new Date(),DateUtil.DATETIME_HORIZONTAL_FORMAT)));
-            user.setLastip(ip);
-            userService.updateUser(user);
-        }
-        return "redirect:/manager";
+        Map<String,Object> map = new HashMap<String, Object>();
+        map.put("articlCount",articlCount);
+        map.put("commontCount",commontCount);
+        map.put("flinkCount",flinkCount);
+        map.put("viewCount",viewCount);
+        return JsonResultUtil.mapToString("success",map);
     }
+
+
+
+
+
 
     @RequestMapping("article")
     public String article(HttpSession session) {
         try {
-            System.out.println(session.getAttribute(UserEnum.ROLE.getCode()));
+            //System.out.println(session.getAttribute(UserEnum.ROLE.getCode()));
             return "/manager/article";
         } catch (Exception e) {
             e.printStackTrace();

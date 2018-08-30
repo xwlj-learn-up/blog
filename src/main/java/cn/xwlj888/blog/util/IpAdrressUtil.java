@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
  * @create 2018-08-24 11:59
  **/
 public class IpAdrressUtil {
+    private static String ip = "0:0:0:0:0:0:0:1";
     /**
      * 获取Ip地址
      * @param request
@@ -44,6 +45,9 @@ public class IpAdrressUtil {
         }
         if (StringUtils.isBlank(XFor) || "unknown".equalsIgnoreCase(XFor)) {
             XFor = request.getRemoteAddr();
+        }
+        if (ip.equals(XFor)){
+            XFor="127.0.0.1";
         }
         return XFor;
     }

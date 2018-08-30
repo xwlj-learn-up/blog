@@ -118,7 +118,7 @@ public class GlobalExceptionHandler extends Throwable {
     private <T extends Throwable> String resultFormat(Integer code, T ex) {
         ex.printStackTrace();
         log.error(String.format(logExceptionFormat, code, ex.getMessage()));
-        return JsonResultUtil.failed(code, ex.getMessage());
+        return (String) JsonResultUtil.textToJson(ex.getMessage());
     }
 
 }
