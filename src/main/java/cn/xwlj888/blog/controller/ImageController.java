@@ -19,7 +19,6 @@ import java.io.FileInputStream;
 @RequestMapping("image")
 public class ImageController {
 	@RequestMapping(value="getImage",method=RequestMethod.GET)
-	@ResponseBody
 	public String getImage(HttpServletRequest request,HttpServletResponse response){
 		try {
 			String params = request.getQueryString();

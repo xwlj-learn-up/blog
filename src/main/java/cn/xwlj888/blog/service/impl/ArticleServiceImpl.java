@@ -11,6 +11,11 @@ public class ArticleServiceImpl implements ArticleService {
 	@Resource
 	private ArticleMapper articleMapper;
 
+	@Override
+	public Integer getCount() {
+		return articleMapper.getCount();
+	}
+
 /*	@Override
 	public List<Article> getArticles() {
 		return articleMapper.selectAll();

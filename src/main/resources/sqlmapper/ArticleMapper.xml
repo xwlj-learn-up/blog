@@ -17,4 +17,8 @@
     <result column="key" jdbcType="VARCHAR" property="key" />
     <result column="keyValue" jdbcType="VARCHAR" property="keyvalue" />
   </resultMap>
+
+  <select id="getCount" resultType="Integer">
+    select count(1) from  article
+  </select>
 </mapper>
