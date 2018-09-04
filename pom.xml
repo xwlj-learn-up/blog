@@ -131,6 +131,43 @@
             <artifactId>UserAgentUtils</artifactId>
             <version>1.20</version>
         </dependency>
+        <!--openoffice转pdf-->
+        <dependency>
+            <groupId>org.jodconverter</groupId>
+            <artifactId>jodconverter-core</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jodconverter</groupId>
+            <artifactId>jodconverter-local</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jodconverter</groupId>
+            <artifactId>jodconverter-spring-boot-starter</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.libreoffice</groupId>
+            <artifactId>juh</artifactId>
+            <version>5.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.libreoffice</groupId>
+            <artifactId>jurt</artifactId>
+            <version>5.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.libreoffice</groupId>
+            <artifactId>ridl</artifactId>
+            <version>5.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.libreoffice</groupId>
+            <artifactId>unoil</artifactId>
+            <version>5.4.2</version>
+        </dependency>
+        <!--openoffice    end-->
     </dependencies>
 
     <build>
