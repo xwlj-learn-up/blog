@@ -1,6 +1,6 @@
 package cn.xwlj888.blog.util;
 
-import cn.xwlj888.blog.common.AjaxResultCodeEnum;
+import cn.xwlj888.blog.enums.AjaxResultCodeEnum;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.JSONLibDataFormatSerializer;

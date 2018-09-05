@@ -1,19 +1,25 @@
-package cn.xwlj888.blog.common;
+package cn.xwlj888.blog.enums;
 
 /**
  * Created with IntelliJ IDEA.
- * User: iron
  * Date: 15-11-13
  * Time: 下午10:48
  * Des:
+ * @author zs
  */
 
 public enum AjaxResultCodeEnum {
-
+    /**
+     * 成功
+     */
     SUCCESS("success", "成功"),
-
+    /**
+     * 失败
+     */
     FAIL("fail","失败"),
-
+    /**
+     * 错误
+     */
     ERROR("error","错误");
 
     private String code;
@@ -30,13 +36,5 @@ public enum AjaxResultCodeEnum {
 
     public String getMessage() {
         return message;
-    }
-
-    @Override
-    public String toString() {
-        return "AjaxResultCodeEnum{" +
-                "code='" + code + '\'' +
-                ", message='" + message + '\'' +
-                '}';
     }
 }

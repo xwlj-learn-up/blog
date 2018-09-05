@@ -1,4 +1,4 @@
-package cn.xwlj888.blog.common;
+package cn.xwlj888.blog.enums;
 
 /**
  * @author

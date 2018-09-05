@@ -1,6 +1,6 @@
 package cn.xwlj888.blog.controller;
 
-import cn.xwlj888.blog.common.UserEnum;
+import cn.xwlj888.blog.enums.UserEnum;
 import cn.xwlj888.blog.pojo.User;
 import cn.xwlj888.blog.service.UserService;
 import cn.xwlj888.blog.util.DateUtil;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
-import java.util.Calendar;
 import java.util.Date;
 
 /**

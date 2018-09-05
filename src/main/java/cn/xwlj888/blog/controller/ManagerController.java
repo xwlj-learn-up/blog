@@ -1,7 +1,7 @@
 package cn.xwlj888.blog.controller;
 
 
-import cn.xwlj888.blog.common.UserEnum;
+import cn.xwlj888.blog.enums.UserEnum;
 import cn.xwlj888.blog.service.ArticleService;
 import cn.xwlj888.blog.service.ManagerService;
 import cn.xwlj888.blog.service.UserService;

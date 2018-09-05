@@ -1,6 +1,5 @@
 package cn.xwlj888.blog.controller;
 
-import cn.xwlj888.blog.common.UserEnum;
 import cn.xwlj888.blog.util.DateUtil;
 import cn.xwlj888.blog.util.IpAdrressUtil;
 import cn.xwlj888.blog.util.JsonResultUtil;
@@ -9,7 +8,6 @@ import eu.bitwalker.useragentutils.UserAgent;
 import eu.bitwalker.useragentutils.Version;
 import lombok.extern.slf4j.Slf4j;
 import org.hyperic.sigar.CpuPerc;
-import org.hyperic.sigar.Mem;
 import org.hyperic.sigar.Sigar;
 import org.hyperic.sigar.SigarException;
 import org.springframework.stereotype.Controller;
