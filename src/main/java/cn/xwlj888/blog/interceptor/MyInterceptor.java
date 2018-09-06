@@ -24,8 +24,8 @@ public class MyInterceptor implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(managerInterceptor).addPathPatterns("/manager/*").excludePathPatterns("/manager/login");
-        registry.addInterceptor(errorPageInterceptor);
+        //registry.addInterceptor(managerInterceptor).addPathPatterns("/manager/*").excludePathPatterns("/manager/login");
+       // registry.addInterceptor(errorPageInterceptor);
     }
 
 
